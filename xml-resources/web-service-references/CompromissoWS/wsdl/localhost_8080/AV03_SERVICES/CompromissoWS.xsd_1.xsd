@@ -1,0 +1,158 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI (http://jax-ws.java.net). RI's version is Metro/2.4.3 (RELEASE-2.4.3-ad3323c; 2019-01-21T17:46:06+0000) JAXWS-RI/2.3.2 JAXWS-API/2.3.2 JAXB-RI/2.3.2 JAXB-API/2.3.2 git-revision#unknown. --><xs:schema xmlns:tns="http://services/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://services/">
+
+<xs:element name="alterarCompromisso" type="tns:alterarCompromisso"/>
+
+<xs:element name="alterarCompromissoResponse" type="tns:alterarCompromissoResponse"/>
+
+<xs:element name="compromissoPorContato" type="tns:compromissoPorContato"/>
+
+<xs:element name="compromissoPorContatoResponse" type="tns:compromissoPorContatoResponse"/>
+
+<xs:element name="compromissoPorID" type="tns:compromissoPorID"/>
+
+<xs:element name="compromissoPorIDResponse" type="tns:compromissoPorIDResponse"/>
+
+<xs:element name="compromissoPorLocal" type="tns:compromissoPorLocal"/>
+
+<xs:element name="compromissoPorLocalResponse" type="tns:compromissoPorLocalResponse"/>
+
+<xs:element name="criarCompromisso" type="tns:criarCompromisso"/>
+
+<xs:element name="criarCompromissoResponse" type="tns:criarCompromissoResponse"/>
+
+<xs:element name="excluirCompromisso" type="tns:excluirCompromisso"/>
+
+<xs:element name="excluirCompromissoResponse" type="tns:excluirCompromissoResponse"/>
+
+<xs:element name="listarCompromissos" type="tns:listarCompromissos"/>
+
+<xs:element name="listarCompromissosResponse" type="tns:listarCompromissosResponse"/>
+
+<xs:complexType name="compromissoPorID">
+<xs:sequence>
+<xs:element name="idcompromisso" type="xs:long"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="compromissoPorIDResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:compromisso" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="compromisso">
+<xs:sequence>
+<xs:element name="dataFim" type="xs:dateTime" minOccurs="0"/>
+<xs:element name="dataInicio" type="xs:dateTime" minOccurs="0"/>
+<xs:element name="idcompromisso" type="xs:long" minOccurs="0"/>
+<xs:element name="local" type="tns:local" minOccurs="0"/>
+<xs:element name="participantes" type="tns:participante" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="local">
+<xs:sequence>
+<xs:element name="bairro" type="xs:string" minOccurs="0"/>
+<xs:element name="cep" type="xs:string" minOccurs="0"/>
+<xs:element name="cidade" type="xs:string" minOccurs="0"/>
+<xs:element name="compromissos" type="tns:compromisso" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="descricao" type="xs:string" minOccurs="0"/>
+<xs:element name="numero" type="xs:string" minOccurs="0"/>
+<xs:element name="rua" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="participante">
+<xs:sequence>
+<xs:element name="idcompromisso" type="tns:compromisso" minOccurs="0"/>
+<xs:element name="idcontato" type="tns:contato" minOccurs="0"/>
+<xs:element name="idparticipante" type="xs:long" minOccurs="0"/>
+<xs:element name="status" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="contato">
+<xs:sequence>
+<xs:element name="email" type="xs:string" minOccurs="0"/>
+<xs:element name="fone" type="xs:string" minOccurs="0"/>
+<xs:element name="idcontato" type="xs:long" minOccurs="0"/>
+<xs:element name="nome" type="xs:string" minOccurs="0"/>
+<xs:element name="participantes" type="tns:participante" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="listarCompromissos">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="listarCompromissosResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:compromisso" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="alterarCompromisso">
+<xs:sequence>
+<xs:element name="idcompromisso" type="xs:long"/>
+<xs:element name="dataInicio" type="xs:string" minOccurs="0"/>
+<xs:element name="dataFim" type="xs:string" minOccurs="0"/>
+<xs:element name="idlocal" type="xs:long"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="alterarCompromissoResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="criarCompromisso">
+<xs:sequence>
+<xs:element name="dataInicio" type="xs:string" minOccurs="0"/>
+<xs:element name="dataFim" type="xs:string" minOccurs="0"/>
+<xs:element name="idlocal" type="xs:long"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="criarCompromissoResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="compromissoPorContato">
+<xs:sequence>
+<xs:element name="idcontato" type="xs:long"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="compromissoPorContatoResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:compromisso" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="compromissoPorLocal">
+<xs:sequence>
+<xs:element name="idlocal" type="xs:long"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="compromissoPorLocalResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:compromisso" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="excluirCompromisso">
+<xs:sequence>
+<xs:element name="idcompromisso" type="xs:long"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="excluirCompromissoResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>

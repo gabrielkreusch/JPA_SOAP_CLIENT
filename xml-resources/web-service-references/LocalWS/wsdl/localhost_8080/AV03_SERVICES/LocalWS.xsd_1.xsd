@@ -1,0 +1,132 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI (http://jax-ws.java.net). RI's version is Metro/2.4.3 (RELEASE-2.4.3-ad3323c; 2019-01-21T17:46:06+0000) JAXWS-RI/2.3.2 JAXWS-API/2.3.2 JAXB-RI/2.3.2 JAXB-API/2.3.2 git-revision#unknown. --><xs:schema xmlns:tns="http://services/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://services/">
+
+<xs:element name="alterarLocal" type="tns:alterarLocal"/>
+
+<xs:element name="alterarLocalResponse" type="tns:alterarLocalResponse"/>
+
+<xs:element name="criarLocal" type="tns:criarLocal"/>
+
+<xs:element name="criarLocalResponse" type="tns:criarLocalResponse"/>
+
+<xs:element name="excluirLocal" type="tns:excluirLocal"/>
+
+<xs:element name="excluirLocalResponse" type="tns:excluirLocalResponse"/>
+
+<xs:element name="listarLocais" type="tns:listarLocais"/>
+
+<xs:element name="listarLocaisResponse" type="tns:listarLocaisResponse"/>
+
+<xs:element name="localPorID" type="tns:localPorID"/>
+
+<xs:element name="localPorIDResponse" type="tns:localPorIDResponse"/>
+
+<xs:complexType name="criarLocal">
+<xs:sequence>
+<xs:element name="descricao" type="xs:string" minOccurs="0"/>
+<xs:element name="rua" type="xs:string" minOccurs="0"/>
+<xs:element name="bairro" type="xs:string" minOccurs="0"/>
+<xs:element name="cidade" type="xs:string" minOccurs="0"/>
+<xs:element name="numero" type="xs:string" minOccurs="0"/>
+<xs:element name="cep" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="criarLocalResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="localPorID">
+<xs:sequence>
+<xs:element name="idlocal" type="xs:long"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="localPorIDResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:local" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="local">
+<xs:sequence>
+<xs:element name="bairro" type="xs:string" minOccurs="0"/>
+<xs:element name="cep" type="xs:string" minOccurs="0"/>
+<xs:element name="cidade" type="xs:string" minOccurs="0"/>
+<xs:element name="compromissos" type="tns:compromisso" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="descricao" type="xs:string" minOccurs="0"/>
+<xs:element name="numero" type="xs:string" minOccurs="0"/>
+<xs:element name="rua" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="compromisso">
+<xs:sequence>
+<xs:element name="dataFim" type="xs:dateTime" minOccurs="0"/>
+<xs:element name="dataInicio" type="xs:dateTime" minOccurs="0"/>
+<xs:element name="idcompromisso" type="xs:long" minOccurs="0"/>
+<xs:element name="local" type="tns:local" minOccurs="0"/>
+<xs:element name="participantes" type="tns:participante" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="participante">
+<xs:sequence>
+<xs:element name="idcompromisso" type="tns:compromisso" minOccurs="0"/>
+<xs:element name="idcontato" type="tns:contato" minOccurs="0"/>
+<xs:element name="idparticipante" type="xs:long" minOccurs="0"/>
+<xs:element name="status" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="contato">
+<xs:sequence>
+<xs:element name="email" type="xs:string" minOccurs="0"/>
+<xs:element name="fone" type="xs:string" minOccurs="0"/>
+<xs:element name="idcontato" type="xs:long" minOccurs="0"/>
+<xs:element name="nome" type="xs:string" minOccurs="0"/>
+<xs:element name="participantes" type="tns:participante" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="alterarLocal">
+<xs:sequence>
+<xs:element name="idlocal" type="xs:long"/>
+<xs:element name="descricao" type="xs:string" minOccurs="0"/>
+<xs:element name="rua" type="xs:string" minOccurs="0"/>
+<xs:element name="bairro" type="xs:string" minOccurs="0"/>
+<xs:element name="cidade" type="xs:string" minOccurs="0"/>
+<xs:element name="numero" type="xs:string" minOccurs="0"/>
+<xs:element name="cep" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="alterarLocalResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="excluirLocal">
+<xs:sequence>
+<xs:element name="idlocal" type="xs:long"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="excluirLocalResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="listarLocais">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="listarLocaisResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:local" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>

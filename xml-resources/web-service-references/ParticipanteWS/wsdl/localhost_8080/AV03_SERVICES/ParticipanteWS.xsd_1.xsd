@@ -1,0 +1,126 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI (http://jax-ws.java.net). RI's version is Metro/2.4.3 (RELEASE-2.4.3-ad3323c; 2019-01-21T17:46:06+0000) JAXWS-RI/2.3.2 JAXWS-API/2.3.2 JAXB-RI/2.3.2 JAXB-API/2.3.2 git-revision#unknown. --><xs:schema xmlns:tns="http://services/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://services/">
+
+<xs:element name="alteraParticipante" type="tns:alteraParticipante"/>
+
+<xs:element name="alteraParticipanteResponse" type="tns:alteraParticipanteResponse"/>
+
+<xs:element name="criarParticipante" type="tns:criarParticipante"/>
+
+<xs:element name="criarParticipanteResponse" type="tns:criarParticipanteResponse"/>
+
+<xs:element name="deleteParticipante" type="tns:deleteParticipante"/>
+
+<xs:element name="deleteParticipanteResponse" type="tns:deleteParticipanteResponse"/>
+
+<xs:element name="listarParticipantes" type="tns:listarParticipantes"/>
+
+<xs:element name="listarParticipantesResponse" type="tns:listarParticipantesResponse"/>
+
+<xs:element name="participantePorID" type="tns:participantePorID"/>
+
+<xs:element name="participantePorIDResponse" type="tns:participantePorIDResponse"/>
+
+<xs:complexType name="alteraParticipante">
+<xs:sequence>
+<xs:element name="idparticipante" type="xs:long"/>
+<xs:element name="status" type="xs:boolean"/>
+<xs:element name="idcontato" type="xs:long"/>
+<xs:element name="idcompromisso" type="xs:long"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="alteraParticipanteResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="listarParticipantes">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="listarParticipantesResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:participante" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="participante">
+<xs:sequence>
+<xs:element name="idcompromisso" type="tns:compromisso" minOccurs="0"/>
+<xs:element name="idcontato" type="tns:contato" minOccurs="0"/>
+<xs:element name="idparticipante" type="xs:long" minOccurs="0"/>
+<xs:element name="status" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="compromisso">
+<xs:sequence>
+<xs:element name="dataFim" type="xs:dateTime" minOccurs="0"/>
+<xs:element name="dataInicio" type="xs:dateTime" minOccurs="0"/>
+<xs:element name="idcompromisso" type="xs:long" minOccurs="0"/>
+<xs:element name="local" type="tns:local" minOccurs="0"/>
+<xs:element name="participantes" type="tns:participante" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="local">
+<xs:sequence>
+<xs:element name="bairro" type="xs:string" minOccurs="0"/>
+<xs:element name="cep" type="xs:string" minOccurs="0"/>
+<xs:element name="cidade" type="xs:string" minOccurs="0"/>
+<xs:element name="compromissos" type="tns:compromisso" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="descricao" type="xs:string" minOccurs="0"/>
+<xs:element name="numero" type="xs:string" minOccurs="0"/>
+<xs:element name="rua" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="contato">
+<xs:sequence>
+<xs:element name="email" type="xs:string" minOccurs="0"/>
+<xs:element name="fone" type="xs:string" minOccurs="0"/>
+<xs:element name="idcontato" type="xs:long" minOccurs="0"/>
+<xs:element name="nome" type="xs:string" minOccurs="0"/>
+<xs:element name="participantes" type="tns:participante" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="deleteParticipante">
+<xs:sequence>
+<xs:element name="idparticipante" type="xs:long"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="deleteParticipanteResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="criarParticipante">
+<xs:sequence>
+<xs:element name="status" type="xs:boolean"/>
+<xs:element name="idcontato" type="xs:long"/>
+<xs:element name="idcompromisso" type="xs:long"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="criarParticipanteResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="participantePorID">
+<xs:sequence>
+<xs:element name="idparticipante" type="xs:long"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="participantePorIDResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:participante" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>
