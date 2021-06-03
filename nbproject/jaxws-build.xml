@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+        *** GENERATED FROM jax-ws.xml - DO NOT EDIT !                             ***
+        *** TO MODIFY wsimport options USE Web Service node -> Edit WS Attributes ***
+        *** TO CHANGE TARGETS GENERATED TO jaxws-build.xml COPY THOSE             ***
+        *** TARGETS TO ../build.xml AND MODIFY THAT FILE INSTEAD                  ***
+
+        --><project xmlns:xalan="http://xml.apache.org/xslt" xmlns:j2seproject3="http://www.netbeans.org/ns/j2se-project/3" xmlns:jaxws="http://www.netbeans.org/ns/jax-ws/1">
+    <!--
+                ===================
+                JAX-WS WSIMPORT SECTION
+                ===================
+            -->
+    <target name="wsimport-init" depends="init">
+        <mkdir dir="${build.generated.sources.dir}/jax-ws"/>
+        <taskdef name="wsimport" classname="com.sun.tools.ws.ant.WsImport">
+            <classpath path="${libs.jaxws21.classpath}"/>
+        </taskdef>
+    </target>
+    <target name="wsimport-client-ParticipanteWS" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/ParticipanteWS"/>
+        <property name="wsdl-ParticipanteWS" location="xml-resources/web-service-references/ParticipanteWS/wsdl/localhost_8080/AV03_SERVICES/ParticipanteWS.wsdl"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/ParticipanteWS" destdir="${build.generated.dir}/jax-wsCache/ParticipanteWS" wsdl="${wsdl-ParticipanteWS}" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:8080/AV03_SERVICES/ParticipanteWS?wsdl" xnocompile="true" xendorsed="true">
+            <depends file="${wsdl-ParticipanteWS}"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/ParticipanteWS"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/ParticipanteWS">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-ParticipanteWS" depends="-init-project">
+        <delete dir="${build.generated.dir}/jax-wsCache/ParticipanteWS"/>
+        <delete dir="${build.generated.sources.dir}/jax-ws/services"/>
+    </target>
+    <target name="wsimport-client-LocalWS" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/LocalWS"/>
+        <property name="wsdl-LocalWS" location="xml-resources/web-service-references/LocalWS/wsdl/localhost_8080/AV03_SERVICES/LocalWS.wsdl"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/LocalWS" destdir="${build.generated.dir}/jax-wsCache/LocalWS" wsdl="${wsdl-LocalWS}" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:8080/AV03_SERVICES/LocalWS?wsdl" xnocompile="true" xendorsed="true">
+            <depends file="${wsdl-LocalWS}"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/LocalWS"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/LocalWS">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-LocalWS" depends="-init-project">
+        <delete dir="${build.generated.dir}/jax-wsCache/LocalWS"/>
+        <delete dir="${build.generated.sources.dir}/jax-ws/services"/>
+    </target>
+    <target name="wsimport-client-ContatoWS" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/ContatoWS"/>
+        <property name="wsdl-ContatoWS" location="xml-resources/web-service-references/ContatoWS/wsdl/localhost_8080/AV03_SERVICES/ContatoWS.wsdl"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/ContatoWS" destdir="${build.generated.dir}/jax-wsCache/ContatoWS" wsdl="${wsdl-ContatoWS}" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:8080/AV03_SERVICES/ContatoWS?wsdl" xnocompile="true" xendorsed="true">
+            <depends file="${wsdl-ContatoWS}"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/ContatoWS"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/ContatoWS">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-ContatoWS" depends="-init-project">
+        <delete dir="${build.generated.dir}/jax-wsCache/ContatoWS"/>
+        <delete dir="${build.generated.sources.dir}/jax-ws/services"/>
+    </target>
+    <target name="wsimport-client-CompromissoWS" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/CompromissoWS"/>
+        <property name="wsdl-CompromissoWS" location="xml-resources/web-service-references/CompromissoWS/wsdl/localhost_8080/AV03_SERVICES/CompromissoWS.wsdl"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/CompromissoWS" destdir="${build.generated.dir}/jax-wsCache/CompromissoWS" wsdl="${wsdl-CompromissoWS}" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:8080/AV03_SERVICES/CompromissoWS?wsdl" xnocompile="true" xendorsed="true">
+            <depends file="${wsdl-CompromissoWS}"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/CompromissoWS"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/CompromissoWS">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-CompromissoWS" depends="-init-project">
+        <delete dir="${build.generated.dir}/jax-wsCache/CompromissoWS"/>
+        <delete dir="${build.generated.sources.dir}/jax-ws/services"/>
+    </target>
+    <target name="wsimport-client-generate" depends="wsimport-client-ParticipanteWS, wsimport-client-LocalWS, wsimport-client-ContatoWS, wsimport-client-CompromissoWS"/>
+</project>
