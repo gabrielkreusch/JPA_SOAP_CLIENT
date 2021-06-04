@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="system">
+    <system systemId="http://localhost:8080/AV03_SERVICES/CompromissoWS?wsdl" uri="wsdl/localhost_8080/AV03_SERVICES/CompromissoWS.wsdl"/>
+    <system systemId="http://localhost:8080/AV03_SERVICES/CompromissoWS?xsd=1" uri="wsdl/localhost_8080/AV03_SERVICES/CompromissoWS.xsd_1.xsd"/>
+    <system systemId="http://localhost:8080/AV03_SERVICES/ParticipanteWS?wsdl" uri="wsdl/localhost_8080/AV03_SERVICES/ParticipanteWS.wsdl"/>
+    <system systemId="http://localhost:8080/AV03_SERVICES/ParticipanteWS?xsd=1" uri="wsdl/localhost_8080/AV03_SERVICES/ParticipanteWS.xsd_1.xsd"/>
+    <system systemId="http://localhost:8080/AV03_SERVICES/LocalWS?wsdl" uri="wsdl/localhost_8080/AV03_SERVICES/LocalWS.wsdl"/>
+    <system systemId="http://localhost:8080/AV03_SERVICES/LocalWS?xsd=1" uri="wsdl/localhost_8080/AV03_SERVICES/LocalWS.xsd_1.xsd"/>
+    <system systemId="http://localhost:8080/AV03_SERVICES/ContatoWS?wsdl" uri="wsdl/localhost_8080/AV03_SERVICES/ContatoWS.wsdl"/>
+    <system systemId="http://localhost:8080/AV03_SERVICES/ContatoWS?xsd=1" uri="wsdl/localhost_8080/AV03_SERVICES/ContatoWS.xsd_1.xsd"/>
+</catalog>

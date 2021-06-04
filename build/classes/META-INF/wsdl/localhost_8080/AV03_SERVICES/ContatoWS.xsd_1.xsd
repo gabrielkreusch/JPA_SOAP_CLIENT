@@ -1,0 +1,142 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI (http://jax-ws.java.net). RI's version is Metro/2.4.3 (RELEASE-2.4.3-ad3323c; 2019-01-21T17:46:06+0000) JAXWS-RI/2.3.2 JAXWS-API/2.3.2 JAXB-RI/2.3.2 JAXB-API/2.3.2 git-revision#unknown. --><xs:schema xmlns:tns="http://services/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://services/">
+
+<xs:element name="alterarContato" type="tns:alterarContato"/>
+
+<xs:element name="alterarContatoResponse" type="tns:alterarContatoResponse"/>
+
+<xs:element name="contatoPorID" type="tns:contatoPorID"/>
+
+<xs:element name="contatoPorIDResponse" type="tns:contatoPorIDResponse"/>
+
+<xs:element name="contatoPorNome" type="tns:contatoPorNome"/>
+
+<xs:element name="contatoPorNomeResponse" type="tns:contatoPorNomeResponse"/>
+
+<xs:element name="criarContato" type="tns:criarContato"/>
+
+<xs:element name="criarContatoResponse" type="tns:criarContatoResponse"/>
+
+<xs:element name="excluirContato" type="tns:excluirContato"/>
+
+<xs:element name="excluirContatoResponse" type="tns:excluirContatoResponse"/>
+
+<xs:element name="listarContatos" type="tns:listarContatos"/>
+
+<xs:element name="listarContatosResponse" type="tns:listarContatosResponse"/>
+
+<xs:complexType name="contatoPorID">
+<xs:sequence>
+<xs:element name="idcontato" type="xs:long"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="contatoPorIDResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:contato" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="contato">
+<xs:sequence>
+<xs:element name="email" type="xs:string" minOccurs="0"/>
+<xs:element name="fone" type="xs:string" minOccurs="0"/>
+<xs:element name="idcontato" type="xs:long" minOccurs="0"/>
+<xs:element name="nome" type="xs:string" minOccurs="0"/>
+<xs:element name="participantes" type="tns:participante" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="participante">
+<xs:sequence>
+<xs:element name="idcompromisso" type="tns:compromisso" minOccurs="0"/>
+<xs:element name="idcontato" type="tns:contato" minOccurs="0"/>
+<xs:element name="idparticipante" type="xs:long" minOccurs="0"/>
+<xs:element name="status" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="compromisso">
+<xs:sequence>
+<xs:element name="dataFim" type="xs:dateTime" minOccurs="0"/>
+<xs:element name="dataInicio" type="xs:dateTime" minOccurs="0"/>
+<xs:element name="idcompromisso" type="xs:long" minOccurs="0"/>
+<xs:element name="local" type="tns:local" minOccurs="0"/>
+<xs:element name="participantes" type="tns:participante" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="local">
+<xs:sequence>
+<xs:element name="bairro" type="xs:string" minOccurs="0"/>
+<xs:element name="cep" type="xs:string" minOccurs="0"/>
+<xs:element name="cidade" type="xs:string" minOccurs="0"/>
+<xs:element name="compromissos" type="tns:compromisso" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="descricao" type="xs:string" minOccurs="0"/>
+<xs:element name="numero" type="xs:string" minOccurs="0"/>
+<xs:element name="rua" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="alterarContato">
+<xs:sequence>
+<xs:element name="idcontato" type="xs:long"/>
+<xs:element name="nome" type="xs:string" minOccurs="0"/>
+<xs:element name="fone" type="xs:string" minOccurs="0"/>
+<xs:element name="email" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="alterarContatoResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="criarContato">
+<xs:sequence>
+<xs:element name="nome" type="xs:string" minOccurs="0"/>
+<xs:element name="fone" type="xs:string" minOccurs="0"/>
+<xs:element name="email" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="criarContatoResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="listarContatos">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="listarContatosResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:contato" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="excluirContato">
+<xs:sequence>
+<xs:element name="idcontato" type="xs:long"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="excluirContatoResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="contatoPorNome">
+<xs:sequence>
+<xs:element name="nome" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="contatoPorNomeResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:contato" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>
